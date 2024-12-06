@@ -24,7 +24,8 @@ class Blockchain:
         with open('blockchain.json','r') as blockchain_file:
             blockchain_data = json.load(blockchain_file)
         print(blockchain_data)    
-        self.create_block(proof=1,previous_hash='0')
+        self.chain=blockchain_data['chain']
+        #self.create_block(proof=1,previous_hash='0')
   
     def create_block(self, proof, previous_hash):
         block = {'index':len(self.chain)+1,
