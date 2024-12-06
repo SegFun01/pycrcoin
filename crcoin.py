@@ -25,7 +25,8 @@ class Blockchain:
         self.chain = []
         self.transactions=[]
         with open('blockchain.json','r') as blockchain_file:
-            self.chain = json.load(blockchain_file)
+            blockchain_data = json.load(blockchain_file)
+        self.chain= blockchain_data['chain']    
         #self.create_block(proof=1,previous_hash='0')
         self.nodes = set()
        
