@@ -8,14 +8,19 @@ import requests
 from uuid import uuid4
 from urllib.parse import urlparse
 
-
+# cargar config
+with open('config.json', 'r') as config_file:
+    config_data = json.load(config_file)
+    
 # 1 Armar blockchain
 
 class Blockchain:
     def __init__(self):
         self.chain = []
         self.transactions=[]
-        self.create_block(proof=1,previous_hash='0')
+        with open('blockchain.json','r') as blockchain_file:
+            self.chain = json.load(blockchain_file)
+        #self.create_block(proof=1,previous_hash='0')
         self.nodes = set()
        
     def add_node(self,address):
@@ -99,8 +104,9 @@ class Blockchain:
 app = Flask(__name__)
 
 # crear una dirección de nodo en puerto 500
-my_node_adress = str(uuid4()).replace('-',"")
-my_receiver = 'crcs2112'
+my_node_adress = config_data['address']
+my_receiver = config_data['receiver']
+my_sender = 'mining reward'
 my_amount = 1
 
 
