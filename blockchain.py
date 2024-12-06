@@ -19,7 +19,7 @@ my_amount = 10
 
 class Blockchain:
     def __init__(self):
-        self.chain = []
+        #self.chain = []
         with open('blockchain.json','r') as blockchain_file:
             self.chain = json.load(blockchain_file)
         #self.create_block(proof=1,previous_hash='0')
