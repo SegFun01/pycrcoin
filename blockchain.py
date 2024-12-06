@@ -8,6 +8,7 @@ from flask import Flask, jsonify
 # cargar config
 with open('config.json', 'r') as config_file:
     config_data = json.load(config_file)
+print(config_data)
 
 my_node_host = config_data['host']
 my_node_port = config_data['port']
@@ -19,9 +20,9 @@ my_amount = 10
 
 class Blockchain:
     def __init__(self):
-        #self.chain = []
-        with open('blockchain.json','r') as blockchain_file:
-            self.chain = json.load(blockchain_file[])
+        self.chain = []
+        #with open('blockchain.json','r') as blockchain_file:
+        #    self.chain = json.load(blockchain_file[])
         #self.create_block(proof=1,previous_hash='0')
   
     def create_block(self, proof, previous_hash):
