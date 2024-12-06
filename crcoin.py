@@ -104,7 +104,8 @@ class Blockchain:
 app = Flask(__name__)
 
 # crear una dirección de nodo en puerto 500...
-my_node_adress = config_data['address']
+my_node_host = config_data['host']
+my_node_port = config_data['port']
 my_receiver = config_data['receiver']
 my_sender = 'mining reward'
 my_amount = 10
@@ -121,7 +122,7 @@ def mine_block():
     previous_proof = previous_block['proof']
     proof = blockchain.proof_of_work(previous_proof)
     previous_hash = blockchain.hash(previous_block)
-    blockchain.add_transaction(sender=my_node_address,receiver=my_receiver,amount=my_amount)
+    blockchain.add_transaction(sender=my_sender,receiver=my_receiver,amount=my_amount)
 
     block = blockchain.create_block(proof,previous_hash)
     response = {'message':'Congrats!, you´ve mined a block!',
@@ -190,7 +191,7 @@ def replace_chain():
 
 
 # Correr el app
-app.run(host='0.0.0.0', port='5000')
+app.run(host='0.0.0.0', port=my_node_port)
 
 
 

@@ -5,6 +5,16 @@ import hashlib
 import json
 from flask import Flask, jsonify
 
+# cargar config
+with open('config.json', 'r') as config_file:
+    config_data = json.load(config_file)
+
+my_node_host = config_data['host']
+my_node_port = config_data['port']
+my_receiver = config_data['account']
+my_amount = 10
+
+
 # 1 Armar blockchain
 
 class Blockchain:
@@ -95,7 +105,7 @@ def is_valid():
     return jsonify(response), 200
 
 # Correr el app
-app.run(host='0.0.0.0', port='5000')
+app.run(host='0.0.0.0', port=my_node_port)
 
 
 
