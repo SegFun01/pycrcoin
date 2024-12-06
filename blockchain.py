@@ -22,7 +22,7 @@ class Blockchain:
     def __init__(self):
         self.chain = []
         with open('blockchain.json','r') as blockchain_file:
-            blockchain_data = json.load(blockchain_file[])
+            blockchain_data = json.load(blockchain_file)
         print(blockchain_data)    
         self.create_block(proof=1,previous_hash='0')
   
