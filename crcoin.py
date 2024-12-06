@@ -12,6 +12,12 @@ from urllib.parse import urlparse
 with open('config.json', 'r') as config_file:
     config_data = json.load(config_file)
     
+my_node_host = config_data['host']
+my_node_port = config_data['port']
+my_receiver = config_data['account']
+my_sender = config_data['account']
+my_amount = 10
+
 # 1 Armar blockchain
 
 class Blockchain:
