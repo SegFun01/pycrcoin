@@ -1,0 +1,19 @@
+{
+    "chain":[
+        {
+            "index": 1,
+            "previous_hash": "0",
+            "proof": 0,
+            "timestamp": "2024-12-06 14:40:3.1415926",
+            "transactions": 
+            [
+                { 
+                    "sender": "0",
+                    "receiver": "d426b3d317ac0a95e2a6a0c2f18f582b998b4513541acea33ec9800c53935f02",
+                    "amount": 10                     
+                }
+            ]
+        }
+
+    ]
+}

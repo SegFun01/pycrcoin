@@ -103,11 +103,11 @@ class Blockchain:
 # app Flask
 app = Flask(__name__)
 
-# crear una dirección de nodo en puerto 500
+# crear una dirección de nodo en puerto 500...
 my_node_adress = config_data['address']
 my_receiver = config_data['receiver']
 my_sender = 'mining reward'
-my_amount = 1
+my_amount = 10
 
 
 #crear la Cadena de Blocues
